@@ -32,13 +32,6 @@ const rootReducer = (state = initialState, action) => {
                 cities: state.cities.filter(c => c.id !== action.payload)
             }
 
-        case "GET_CITY_INFO":
-            let arrayCity = state.cities.filter(c => c.id === action.payload);
-            return {
-                ...state,
-                cityInfo: arrayCity[0],
-            }
-
         case "CITY_NOT_FOUND":
             return {
                 ...state,

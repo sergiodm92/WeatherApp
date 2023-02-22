@@ -4,17 +4,22 @@ import { getCityInfo } from "../redux/actions/actions";
 import wind from "../utils/windimage.png";
 import visibility from "./functions/visibility.js";
 import { tempColor } from "./functions/temp";
+import { useParams } from "react-router";
 
-export default function CityInfo({ id }) {
+export default function CityInfo() {
+  let id = useParams().id
   let dispatch = useDispatch();
-  let city = useSelector((state) => state.cityInfo);
-  
-
-  useEffect(() => {
-    dispatch(getCityInfo(id));
-  }, []);
+ 
+  const cities = useSelector((state) => state.cities);
+  let city = cities.find((c)=>c.id==id)
 
   return (
+    <>
+        <div className="bg-sky-600 py-3 flex items-center flex-col w-[100%] lg:flex-row px-5 gap-5">
+        <p className=" text-gray-200 text-[1.8rem] lg:text-[2rem] font-[600] ">
+          Weather App
+        </p>
+    </div>
     <div className=" w-[90%] flex items-center justify-center">
       <div
         className={`${tempColor(city)}  border-black rounded-[18px] p-[10px] border-[2px] flex flex-col items-center justify-between`}
@@ -92,5 +97,6 @@ export default function CityInfo({ id }) {
         </div>
       </div>
     </div>
+    </>
   );
 }

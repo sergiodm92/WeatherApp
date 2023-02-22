@@ -15,7 +15,7 @@ export default function CityCard({ city }) {
       >
         X
       </button>
-      <Link to={`/city/${city.id}`}>
+      <Link to={`/${city.id}`}>
         <div
           className={`${tempColor(city)} h-full border-black rounded-[18px]  p-[10px] w-full border-[2px] flex flex-col items-center`}
         >
