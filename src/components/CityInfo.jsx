@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCityInfo } from "../redux/actions/actions";
-import wind from "../utils/wind-icon.svg";
+import wind from "../utils/windimage.png";
 import visibility from "./functions/visibility.js";
 import { tempColor } from "./functions/temp";
 
